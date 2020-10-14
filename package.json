@@ -19,10 +19,11 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.0",
-    "@material-ui/icons": "^4.9.1",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "materialize-css": "^1.0.0-rc.2",
+    "react-material-ui-carousel": "^2.0.1",
+    "react-materialize": "^3.9.3",
     "react-router-dom": "^5.2.0"
   }
 }
