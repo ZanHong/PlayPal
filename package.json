@@ -19,9 +19,12 @@
     "nodemon": "^1.18.7"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "materialize-css": "^1.0.0-rc.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "react-material-ui-carousel": "^2.0.1",
     "react-materialize": "^3.9.3",
     "react-router-dom": "^5.2.0"

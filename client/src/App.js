@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
+import Router from "./routes/Route";
 import Navbar from "./components/Navbar/Navbar";
-import Carousel from "./components/Carousel/Carousel";
-import Test from "./components/test/test";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
-      <Carousel />
-      <Test />
-    </div>
+    </Router>
   );
 }
 

@@ -1,5 +1,5 @@
 .header {
   position: relative;
-  z-index: 1000;
-  background-color: #63b3ed;
+  z-index: 900;
+  background-color: #0079C1;
 };

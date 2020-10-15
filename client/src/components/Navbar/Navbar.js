@@ -6,9 +6,9 @@ export default function Nav() {
   return (
     <Navbar className="header z-depth-2"
       alignLinks="right"
-      brand={<a className="brand-logo" style={{ marginLeft: "20px" }} href="#" > PlayPal</a >}
+      brand={<a className="brand-logo" style={{ marginLeft: "20px" }} href="/" > PlayPal</a >}
       id="mobile-nav"
-      menuIcon={< Icon > menu</Icon >}
+      menuIcon={<Icon>menu</Icon>}
       options={{
         draggable: true,
         edge: 'left',
@@ -21,11 +21,8 @@ export default function Nav() {
         preventScrolling: true
       }}
     >
-      <NavItem href="">
-        Getting started
-      </NavItem>
-      <NavItem href="components.html">
-        Components
+      <NavItem href="/login">
+        Login/Signup
       </NavItem>
     </Navbar >
   )
