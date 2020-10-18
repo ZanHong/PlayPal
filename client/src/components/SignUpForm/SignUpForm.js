@@ -2,14 +2,14 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-materialize";
 import "./style.css";
 
-export default function LoginForm() {
+export default function SignUpForm() {
   return (
     <div>
       <div className="section"></div>
       <center>
         <a href="/"><h4>PlayPal</h4></a>
 
-        <h5>Please login into your account</h5>
+        <h5>Please fill in your details below</h5>
 
         <div className="section"></div>
 
@@ -19,6 +19,13 @@ export default function LoginForm() {
             <form className=" s12" method="post">
               <Row>
                 <Col className=" s12">
+                </Col>
+              </Row>
+
+              <Row>
+                <Col className="input-field s12">
+                  <input className="validate" type="text" name="username" id="username" />
+                  <label htmlFor="username">Enter your username</label>
                 </Col>
               </Row>
 
@@ -39,13 +46,13 @@ export default function LoginForm() {
               <br />
               <center>
                 <Row>
-                  <Button type="submit" name="btn_login" className="col s12 btn btn-large waves-effect indigo">Login</Button>
+                  <Button type="submit" name="btn_signup" className="col s12 btn btn-large waves-effect indigo">Create Account</Button>
                 </Row>
               </center>
             </form>
           </Row>
         </Container>
-        <a href="/signup">Create Account</a>
+        <a href="/login">Log In</a>
       </center>
 
       <div className="section"></div>
