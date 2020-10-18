@@ -5,7 +5,7 @@ export default function NoMatch() {
   return (
     <div>
       <Navbar />
-      <h1>Error 404 Page Not Found</h1>
+      <h1>Sorry Page Not Found</h1>
     </div>
   );
 };
