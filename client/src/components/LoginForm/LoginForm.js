@@ -39,7 +39,14 @@ export default function LoginForm() {
               <br />
               <center>
                 <Row>
-                  <Button type="submit" name="btn_login" className="col s12 btn btn-large waves-effect indigo">Login</Button>
+                  <Button
+                    type="submit"
+                    name="btn_login"
+                    className="col s12 btn btn-large waves-effect indigo"
+                  // disabled={!(formObject.email && formObject.password)}
+                  >
+                    Login
+                    </Button>
                 </Row>
               </center>
             </form>

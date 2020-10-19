@@ -10,7 +10,7 @@ export default function Carousel() {
         duration: 500,
         height: 400,
         indicators: true,
-        interval: 6000
+        interval: 5000
       }}
     >
       <Slide image={<img alt="" src="./assets/images/smiley-hands.jpg" />}>

@@ -1,8 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-materialize";
+import API from "../../utils/API";
 import "./style.css";
 
 export default function SignUpForm() {
+  const [formObject, setFormObject] = useState({
+    username: "",
+    email: "",
+    password: ""
+  });
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value })
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    if (formObject.username && formObject.email && formObject.password) {
+      if (!formObject.email.match(/.+@.+\..+/)) {
+        alert("Please enter a valid email address");
+        setFormObject({
+          username: "",
+          email: "",
+          password: ""
+        })
+      } else if (formObject.password.length < 6) {
+        alert("Password must have at least 6 characters");
+        setFormObject({
+          username: "",
+          email: "",
+          password: ""
+        })
+      } else {
+        API.signUp({
+          username: formObject.username,
+          email: formObject.email,
+          password: formObject.password
+        })
+          .then(res => {
+            console.log(res.data);
+            setFormObject({
+              username: "",
+              email: "",
+              password: ""
+            })
+          })
+          .catch(err => console.log(err));
+        window.location.replace("/account")
+      }
+    }
+  }
+
   return (
     <div>
       <div className="section"></div>
@@ -24,21 +73,42 @@ export default function SignUpForm() {
 
               <Row>
                 <Col className="input-field s12">
-                  <input className="validate" type="text" name="username" id="username" />
+                  <input
+                    className="validate"
+                    type="text"
+                    name="username"
+                    id="username"
+                    onChange={handleInputChange}
+                    value={formObject.username}
+                  />
                   <label htmlFor="username">Enter your username</label>
                 </Col>
               </Row>
 
               <Row>
                 <Col className="input-field s12">
-                  <input className="validate" type="text" name="email" id="email" />
+                  <input
+                    className="validate"
+                    type="text"
+                    name="email"
+                    id="email"
+                    onChange={handleInputChange}
+                    value={formObject.email}
+                  />
                   <label htmlFor="email">Enter your email</label>
                 </Col>
               </Row>
 
               <Row>
                 <Col className="input-field s12">
-                  <input className="validate" type="text" name="password" id="password" />
+                  <input
+                    className="validate"
+                    type="text"
+                    name="password"
+                    id="password"
+                    onChange={handleInputChange}
+                    value={formObject.password}
+                  />
                   <label htmlFor="password">Enter your password</label>
                 </Col>
               </Row>
@@ -46,7 +116,15 @@ export default function SignUpForm() {
               <br />
               <center>
                 <Row>
-                  <Button type="submit" name="btn_signup" className="col s12 btn btn-large waves-effect indigo">Create Account</Button>
+                  <Button
+                    type="submit"
+                    name="btn_signup"
+                    className="col s12 btn btn-large waves-effect indigo"
+                    disabled={!(formObject.username && formObject.email && formObject.password)}
+                    onClick={handleFormSubmit}
+                  >
+                    Create Account
+                  </Button>
                 </Row>
               </center>
             </form>
