@@ -4,8 +4,11 @@ const db = require("../models");
 module.exports = {
   findAll: function (req, res) {
     db.Activity
-      .find(req, res)
-      .then(dbActivities => res.json(dbActivities))
+      .find(req.query)
+      .then(dbActivities => {
+        console.log(dbActivities);
+        res.json(dbActivities);
+      })
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {

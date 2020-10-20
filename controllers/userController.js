@@ -5,8 +5,8 @@ module.exports = {
   create: function (req, res) {
     db.User
       .create(req.body)
-      .then(() => {
-        res.redirect(307, "/api/user/signup")
+      .then((dbUser) => {
+        res.json(dbUser)
       })
       .catch(err => console.log(err))
   }

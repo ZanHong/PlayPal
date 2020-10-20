@@ -24,6 +24,9 @@ export default function Nav() {
       <NavItem href="/login">
         Login/Signup
       </NavItem>
+      {/* <NavItem href="/logout">
+        Logout
+      </NavItem> */}
     </Navbar >
   )
 }

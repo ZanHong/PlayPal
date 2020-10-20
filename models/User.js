@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 const Schema = mongoose.Schema;
 
@@ -7,7 +7,7 @@ const UserSchema = new Schema({
   username: {
     type: String,
     trim: true,
-    required: true,
+    // required: true,
     unique: true
   },
 
@@ -33,6 +33,10 @@ const UserSchema = new Schema({
 
   planner: Array
 })
+
+UserSchema.methods.validPassword = function (userPassword) {
+  return bcrypt.compareSync(userPassword, this.password);
+};
 
 const User = mongoose.model("User", UserSchema);
 

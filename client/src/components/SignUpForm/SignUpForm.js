@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-materialize";
 import API from "../../utils/API";
+import Auth from "../../utils/Auth";
 import "./style.css";
 
 export default function SignUpForm() {
@@ -45,9 +46,10 @@ export default function SignUpForm() {
               email: "",
               password: ""
             })
+            Auth.authenticateUser(res.data.email);
+            window.location.replace("/account");
           })
           .catch(err => console.log(err));
-        window.location.replace("/account")
       }
     }
   }
