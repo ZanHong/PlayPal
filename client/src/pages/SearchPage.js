@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar/Navbar";
 import SearchForm from "../components/SearchForm/SearchForm";
-import { SearchList, ListItem } from "../components/List/List";
+import BorderedWrapper from "../components/BorderedWrapper/BorderedWrapper";
+import { SearchList, ListItem, ListContainer } from "../components/List/List";
+import { Row } from "react-materialize";
+import Loader from "../components/Loading/Loading";
+import { Link } from "react-router-dom";
 import API from "../utils/API";
-import { Container, Row } from "react-materialize";
 
 export default function SearchPage() {
   const [activities, setActivities] = useState([]);
   // const [formObject, setFormObject] = useState({})
-  console.log(activities);
+  // console.log(activities);
 
   useEffect(() => {
     loadActivities()
@@ -17,7 +19,7 @@ export default function SearchPage() {
   function loadActivities() {
     API.getActivities()
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setActivities(res.data);
       }
 
@@ -32,25 +34,29 @@ export default function SearchPage() {
 
   return (
     <div>
-      <Navbar />
-      <Container>
+      <BorderedWrapper>
         <Row>
           <SearchForm />
+        </Row>
+        <Row>
           {activities.length ? (
             <SearchList>
-              {activities.map(activity => (
-                <ListItem key={activity._id}>
-                  <p>Title: {activity.title}</p>
-                  <p>Author: {activity.author}</p>
-                  <p>Category: {activity.category}</p>
-                </ListItem>
-              ))}
+              <ListContainer>
+                {activities.map(activity => (
+                  <ListItem key={activity._id}>
+                    <Link to={"/activities/" + activity._id}>
+                      <h5>{activity.title} by {activity.author}</h5>
+                      <p>Category: {activity.category}</p>
+                    </Link>
+                  </ListItem>
+                ))}
+              </ListContainer>
             </SearchList>
           ) : (
-              <h3>No Results to Display</h3>
+              <Loader />
             )}
         </Row>
-      </Container>
-    </div>
+      </BorderedWrapper>
+    </div >
   )
 }

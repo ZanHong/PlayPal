@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from "../components/Navbar/Navbar";
-import Wrapper from "../components/Wrapper/Wrapper";
+import BorderedWrapper from "../components/BorderedWrapper/BorderedWrapper";
 import UserCard from "../components/UserCard/UserCard";
 import { UserList, ListContainer, ListItem } from "../components/List/List";
 import { Row } from "react-materialize";
@@ -29,8 +28,7 @@ export default function Account() {
   };
   return (
     <div>
-      <Navbar />
-      <Wrapper>
+      <BorderedWrapper>
         <Row>
           <UserCard />
           {activities.length ? (
@@ -48,9 +46,10 @@ export default function Account() {
             </UserList>
           ) : (
               <h3>No Results to Display</h3>
-            )}
+            )
+          }
         </Row>
-      </Wrapper>
+      </BorderedWrapper>
     </div>
   )
 }

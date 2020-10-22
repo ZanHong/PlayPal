@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp";
 import NoMatch from "../pages/NoMatch";
 import Account from "../pages/Account";
 import SearchPage from "../pages/SearchPage";
+import Detail from "../pages/Detail";
 import Auth from "../utils/Auth";
 
 function PrivateRoute({ component: Component, ...rest }) {
@@ -36,6 +37,7 @@ export default function Router() {
         <Route exact path={"/signup"} component={SignUp} />
         <Route exact path={"/searchpage"} component={SearchPage} />
         <PrivateRoute exact path={"/account"} component={Account} />
+        <PrivateRoute exact path={"/activities/:id"} component={Detail} />
         <Route component={NoMatch} />
       </Switch>
     </BrowserRouter>

@@ -1,0 +1,6 @@
+.bordered {
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}

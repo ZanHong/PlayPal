@@ -4,7 +4,7 @@ import "./style.css";
 
 export function SearchList({ children }) {
   return (
-    <Col m={8} s={12}>
+    <Col m={12} s={12}>
       <Collection>{children}</Collection>
     </Col>
   )

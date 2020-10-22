@@ -5,4 +5,8 @@ router.route("/")
   .get(activityController.findAll)
   .post(activityController.create)
 
+router
+  .route("/:id")
+  .get(activityController.findById)
+
 module.exports = router;

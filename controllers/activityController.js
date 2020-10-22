@@ -16,5 +16,12 @@ module.exports = {
       .create(req.body)
       .then(dbActivities => res.json(dbActivities))
       .catch(err => res.status(422).json(err));
-  }
+  },
+  findById: function (req, res) {
+    db.Activity.findById(req.params.id)
+      .then(dbActivities => {
+        res.json(dbActivities)
+      })
+      .catch(err => res.status(422).json(err));
+  },
 }

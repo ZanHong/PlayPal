@@ -10,6 +10,9 @@ export default {
   getActivities: function () {
     return axios.get("/api/activities");
   },
+  getActivity: function (id) {
+    return axios.get("/api/activities/" + id)
+  },
   getUserById: function (id) {
     return axios.get("/api/user/" + id)
   }
