@@ -9,5 +9,8 @@ export default {
   },
   getActivities: function () {
     return axios.get("/api/activities");
+  },
+  getUserById: function (id) {
+    return axios.get("/api/user/" + id)
   }
 }

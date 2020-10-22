@@ -8,10 +8,12 @@ router.route("/signup")
 
 // Matches with "/api/user/login"
 router.route("/login")
-  .post(passport.authenticate("local"), (req, res) => {
+  // .post(passport.authenticate("local"), (req, res) => {
+  .post((req, res) => {
+    console.log(req.body)
     res.json({
-      email: req.user.email,
-      id: req.user.id
+      email: req.body.email,
+      id: req.body.id
     });
   });
 
@@ -21,5 +23,8 @@ router.route("/logout")
     req.logout();
     res.redirect("/")
   });
+
+router.route("/:id")
+  .get(userController.findById)
 
 module.exports = router;

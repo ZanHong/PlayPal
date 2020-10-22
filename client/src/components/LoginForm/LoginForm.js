@@ -17,6 +17,7 @@ export default function LoginForm() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    console.log(formObject.email)
     if (formObject.email && formObject.password) {
       if (!formObject.email.match(/.+@.+\..+/)) {
         alert("Please enter a valid email address");
@@ -37,12 +38,12 @@ export default function LoginForm() {
         })
           .then(res => {
             console.log(res.data);
-            setFormObject({
-              email: "",
-              password: ""
-            })
+            // setFormObject({
+            //   email: "",
+            //   password: ""
+            // })
             Auth.authenticateUser(res.data.email);
-            window.location.replace("/account");
+            // window.location.replace("/account");
           })
           .catch(err => console.log(err));
       }
