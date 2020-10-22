@@ -67,9 +67,9 @@ export default function SignUpForm() {
         <Container>
           <Row className="z-depth-1 grey lighten-4 main-row" >
 
-            <form className=" s12" method="post">
+            <form className="s12" method="post">
               <Row>
-                <Col className=" s12">
+                <Col className="s12">
                 </Col>
               </Row>
 

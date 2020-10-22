@@ -39,10 +39,6 @@ export default function LoginForm() {
         })
           .then(res => {
             console.log(res.data);
-            // setFormObject({
-            //   email: "",
-            //   password: ""
-            // })
             Auth.authenticateUser(res.data.email);
             window.location.replace("/account");
           })

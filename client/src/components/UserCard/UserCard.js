@@ -10,7 +10,7 @@ export default function UserCard(props) {
     >
       <Card
         actions={[
-          <a key="1" href="#">Add an activity here!</a>,
+          <a key="1" href="/addactivity">Add an activity here!</a>,
         ]}
         className="user-card"
         textClassName="white-text"

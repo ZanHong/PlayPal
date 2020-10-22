@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Select } from "react-materialize";
 
-export default function SearchForm() {
+export default function SearchForm(props) {
   return (
     <Select
       id="Select-9"
@@ -24,7 +24,9 @@ export default function SearchForm() {
           outDuration: 250
         }
       }}
+      className="validate"
       value=""
+      onChange={props.handleInputChange}
     >
       <option
         disabled
@@ -51,6 +53,5 @@ export default function SearchForm() {
         All
       </option>
     </Select>
-
   )
 }

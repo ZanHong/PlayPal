@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SearchForm from "../components/SearchForm/SearchForm";
+import Dropdown from "../components/Dropdown/Dropdown";
 import BorderedWrapper from "../components/BorderedWrapper/BorderedWrapper";
 import { SearchList, ListItem, ListContainer } from "../components/List/List";
 import { Row } from "react-materialize";
@@ -36,7 +36,7 @@ export default function SearchPage() {
     <div>
       <BorderedWrapper>
         <Row>
-          <SearchForm />
+          <Dropdown />
         </Row>
         <Row>
           {activities.length ? (
