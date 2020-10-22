@@ -7,10 +7,7 @@ import API from "../utils/API";
 
 
 export default function Account() {
-
   const [activities, setActivities] = useState([]);
-  // const [formObject, setFormObject] = useState({})
-  console.log(activities);
 
   useEffect(() => {
     loadActivities()
@@ -19,11 +16,8 @@ export default function Account() {
   function loadActivities() {
     API.getActivities()
       .then(res => {
-        console.log(res.data);
         setActivities(res.data);
-      }
-
-      )
+      })
       .catch(err => console.log(err))
   };
   return (

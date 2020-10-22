@@ -32,22 +32,22 @@ export default function SearchForm() {
       >
         Choose a category
       </option>
-      <option value="1">
+      <option value="Physical">
         Physical
       </option>
-      <option value="2">
+      <option value="Social">
         Social
       </option>
-      <option value="3">
+      <option value="Emotional">
         Emotional
       </option>
-      <option value="4">
+      <option value="Cognitive">
         Cognitive
       </option>
-      <option value="5">
+      <option value="Language">
         Language
       </option>
-      <option value="6">
+      <option value="All">
         All
       </option>
     </Select>

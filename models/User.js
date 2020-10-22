@@ -38,6 +38,16 @@ UserSchema.methods.validPassword = function (userPassword) {
   return bcrypt.compareSync(userPassword, this.password);
 };
 
+UserSchema.pre("save", function (next) {
+  console.log(this)
+  this.password = bcrypt.hashSync(
+    this.password,
+    bcrypt.genSaltSync(10),
+    null
+  );
+  next();
+});
+
 const User = mongoose.model("User", UserSchema);
 
 module.exports = User;

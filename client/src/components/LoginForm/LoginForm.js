@@ -32,6 +32,7 @@ export default function LoginForm() {
           password: ""
         })
       } else {
+        console.log(formObject.email)
         API.login({
           email: formObject.email,
           password: formObject.password
@@ -43,7 +44,7 @@ export default function LoginForm() {
             //   password: ""
             // })
             Auth.authenticateUser(res.data.email);
-            // window.location.replace("/account");
+            window.location.replace("/account");
           })
           .catch(err => console.log(err));
       }
