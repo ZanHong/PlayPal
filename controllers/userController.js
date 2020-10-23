@@ -8,6 +8,8 @@ module.exports = {
       .then((dbUser) => res.json(dbUser))
       .catch(err => console.log(err))
   },
+
+  // For future testings so that users can view others' profile
   findById: function (req, res) {
     db.User
       .findById(req.params.id)

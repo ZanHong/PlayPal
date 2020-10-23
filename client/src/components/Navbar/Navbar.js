@@ -1,11 +1,24 @@
 import React from 'react';
 import Auth from "../../utils/Auth";
-import { Navbar, NavItem, Icon } from 'react-materialize';
+import { Navbar, Icon } from 'react-materialize';
 import "./style.css";
+import API from "../../utils/API";
 
 export default function Nav() {
-  console.log(Auth.isUserAuthenticated());
-  console.log(Auth.getToken());
+  if (Auth.isUserAuthenticated()) {
+    console.log("Logged in")
+  }
+
+  function handleLogout(event) {
+    event.preventDefault();
+    API.logout()
+      .then(() => {
+        console.log("Logged out");
+        Auth.deauthenticateUser();
+        window.location.replace("/")
+      })
+      .catch(err => console.log(err))
+  }
 
   return (
     <Navbar className="header z-depth-2"
@@ -32,7 +45,7 @@ export default function Nav() {
           <li><a href="/">Home</a></li>
           <li><a href="/search">Search</a></li>
           <li><a href="/addactivity">Create</a></li>
-          <li><a>Logout</a></li>
+          <li><a onClick={handleLogout}>Logout</a></li>
         </>
         :
         <>
