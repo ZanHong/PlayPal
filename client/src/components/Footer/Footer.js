@@ -5,9 +5,14 @@ import "./style.css";
 export default function Foot() {
   return (
     <Footer
-      className="footer z-depth-3"
-      copyrights="Copyright © 2020"
-      links={<ul><li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li><li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li><li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li><li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li></ul>}
+      className="footer z-depth-2"
+      copyrights="Copyright © PlayPal 2020"
+      links={
+        <ul>
+          <li><a className="grey-text text-lighten-3" href="/">Home</a></li>
+          <li><a className="grey-text text-lighten-3" href="/search">Search</a></li>
+          <li><a className="grey-text text-lighten-3" href="/addactivity">Create</a></li>
+        </ul>}
       moreLinks={<a
         className="grey-text text-lighten-4 right"
         href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome"
@@ -16,10 +21,12 @@ export default function Foot() {
       >Made with React Materialize</a>}
     >
       <h5 className="white-text">
-        Footer Content
+        <a className="grey-text text-lighten-3" href="/">
+          PlayPal
+        </a>
       </h5>
       <p className="grey-text text-lighten-4">
-        You can use rows and columns here to organize your footer content.
+        Paving a brighter future for your children
       </p>
     </Footer>
   )

@@ -23,7 +23,7 @@ export default function Carousel() {
       </h5>
         </Caption>
       </Slide>
-      <Slide image={<img alt="" src="./assets/images/activity-copy.jpg" />}>
+      <Slide image={<img alt="" src="./assets/images/activity.jpg" />}>
         <Caption placement="left">
           <h3>
             Left Aligned Caption
@@ -33,7 +33,7 @@ export default function Carousel() {
       </h5>
         </Caption>
       </Slide>
-      <Slide image={<img alt="" src="./assets/images/friends1.jpg" />}>
+      <Slide image={<img alt="" src="./assets/images/friends.jpg" />}>
         <Caption placement="right">
           <h3>
             Right Aligned Caption
