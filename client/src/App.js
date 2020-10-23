@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import NoMatch from "./pages/NoMatch";
-import Account from "./pages/Account";
+// import Account from "./pages/Account";
 import SearchPage from "./pages/SearchPage";
 import Detail from "./pages/Detail";
 import AddActivity from "./pages/AddActivity";
@@ -43,7 +43,7 @@ function App() {
             <Route exact path={"/login"} component={Login} />
             <Route exact path={"/signup"} component={SignUp} />
             <PrivateRoute exact path={"/search"} component={SearchPage} />
-            <PrivateRoute exact path={"/account"} component={Account} />
+            {/* <PrivateRoute exact path={"/account"} component={Account} /> */}
             <PrivateRoute exact path={"/addactivity"} component={AddActivity} />
             <PrivateRoute exact path={"/activities/:id"} component={Detail} />
             <Route component={NoMatch} />

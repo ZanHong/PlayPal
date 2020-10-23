@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button, Icon } from "react-materialize";
+import { Container, Row, Col, Button } from "react-materialize";
 import API from "../../utils/API";
 import Auth from "../../utils/Auth";
 import "./style.css";
@@ -40,7 +40,7 @@ export default function LoginForm() {
           .then(res => {
             console.log(res.data);
             Auth.authenticateUser(res.data.username);
-            window.location.replace("/account");
+            window.location.replace("/");
           })
           .catch(err => console.log(err));
       }

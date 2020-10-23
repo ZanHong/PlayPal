@@ -1,8 +1,12 @@
 import React from 'react';
+import Auth from "../../utils/Auth";
 import { Navbar, NavItem, Icon } from 'react-materialize';
 import "./style.css";
 
 export default function Nav() {
+  console.log(Auth.isUserAuthenticated());
+  console.log(Auth.getToken());
+
   return (
     <Navbar className="header z-depth-2"
       alignLinks="right"
@@ -21,12 +25,21 @@ export default function Nav() {
         preventScrolling: true
       }}
     >
-      <NavItem href="/login">
-        Login/Signup
-      </NavItem>
-      {/* <NavItem href="/logout">
-        Logout
-      </NavItem> */}
+      {Auth.isUserAuthenticated()
+        ?
+        <>
+          <li>Welcome {Auth.getToken()}!</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/search">Search</a></li>
+          <li><a href="/addactivity">Create</a></li>
+          <li><a>Logout</a></li>
+        </>
+        :
+        <>
+          <li><a href="/login">Login/Signup</a></li>
+        </>
+
+      }
     </Navbar >
   )
 }

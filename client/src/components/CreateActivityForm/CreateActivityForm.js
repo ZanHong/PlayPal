@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button, Select } from "react-materialize";
+import { Container, Row, Col, Button, Select, Icon } from "react-materialize";
 import Auth from "../../utils/Auth";
 import API from "../../utils/API";
 
@@ -43,12 +43,13 @@ export default function CreateActivityForm() {
 
   return (
     <Container>
-      <h4 style={{ color: "black" }}>Create an Activity for the Little Ones!</h4>
+      <h4 style={{ color: "#0079C1" }}>Create an Activity for the Little Ones!</h4>
 
       <Row>
         <form className="s12" method="post">
           <Row>
             <Col className="input-field s6">
+              <i className="material-icons prefix">edit</i>
               <input
                 className="validate"
                 type="text"
@@ -60,6 +61,7 @@ export default function CreateActivityForm() {
             </Col>
             <Col className="s6">
               <Select
+                icon={<Icon>child_care</Icon>}
                 id="category"
                 multiple={false}
                 onChange={function noRefCheck() { }}
@@ -113,6 +115,7 @@ export default function CreateActivityForm() {
           </Row>
           <Row>
             <Col className="input-field s12">
+              <i className="material-icons prefix">description</i>
               <textarea
                 id="description"
                 className="materialize-textarea validate"
@@ -125,6 +128,7 @@ export default function CreateActivityForm() {
           </Row>
           <Row>
             <Col className="input-field s12">
+              <i className="material-icons prefix">note_add</i>
               <input
                 className="materialize-textarea validate"
                 type="text"

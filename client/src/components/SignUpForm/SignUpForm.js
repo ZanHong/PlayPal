@@ -47,7 +47,7 @@ export default function SignUpForm() {
               password: ""
             })
             Auth.authenticateUser(res.data.username);
-            window.location.replace("/account");
+            window.location.replace("/");
           })
           .catch(err => console.log(err));
       }

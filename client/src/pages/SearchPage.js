@@ -95,7 +95,7 @@ export default function SearchPage() {
                 {activities.map(activity => (
                   <ListItem key={activity._id}>
                     <Link to={"/activities/" + activity._id}>
-                      <h5>{activity.title} <small> by </small> {activity.author}</h5>
+                      <h5><b>{activity.title}</b> <small> by </small> {activity.author}</h5>
                       <p>Category: {activity.category}</p>
                     </Link>
                   </ListItem>
