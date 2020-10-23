@@ -12,7 +12,7 @@ router.route("/login")
     // .post((req, res) => {
     console.log(req.body)
     res.json({
-      email: req.body.email,
+      username: req.body.username,
       id: req.body.id
     });
   });

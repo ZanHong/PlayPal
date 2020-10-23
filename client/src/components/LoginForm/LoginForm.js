@@ -20,7 +20,7 @@ export default function LoginForm() {
     console.log(formObject.username)
     if (formObject.username && formObject.password) {
       if (!formObject.username) {
-        alert("Please enter a valid username address");
+        alert("Please enter a valid username");
         setFormObject({
           username: "",
           password: ""
