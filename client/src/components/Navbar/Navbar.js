@@ -23,7 +23,7 @@ export default function Nav() {
   return (
     <Navbar className="header z-depth-2"
       alignLinks="right"
-      brand={<a className="brand-logo" style={{ marginLeft: "20px" }} href="/" > PlayPal</a >}
+      brand={<a className="brand-logo" style={{ marginLeft: "20px" }} href="/" > PlayPal!</a >}
       id="mobile-nav"
       menuIcon={<Icon>menu</Icon>}
       options={{
@@ -41,11 +41,11 @@ export default function Nav() {
       {Auth.isUserAuthenticated()
         ?
         <>
-          <li>Welcome {Auth.getToken()}!</li>
+          <li style={{ paddingLeft: "32px" }}>Welcome <b>{Auth.getToken()}</b>!</li>
           <li><a href="/">Home</a></li>
           <li><a href="/search">Search</a></li>
           <li><a href="/addactivity">Create</a></li>
-          <li><a onClick={handleLogout}>Logout</a></li>
+          <li><a href="/logout" onClick={handleLogout}>Logout</a></li>
         </>
         :
         <>

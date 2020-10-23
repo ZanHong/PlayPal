@@ -12,13 +12,18 @@ export default function Foot() {
           <li><a className="grey-text text-lighten-3" href="/">Home</a></li>
           <li><a className="grey-text text-lighten-3" href="/search">Search</a></li>
           <li><a className="grey-text text-lighten-3" href="/addactivity">Create</a></li>
-        </ul>}
-      moreLinks={<a
-        className="grey-text text-lighten-4 right"
-        href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Made with React Materialize</a>}
+        </ul>
+      }
+      moreLinks={
+        <a
+          className="grey-text text-lighten-4 right"
+          href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Made with React Materialize
+        </a>
+      }
     >
       <h5 className="white-text">
         <a className="grey-text text-lighten-3" href="/">

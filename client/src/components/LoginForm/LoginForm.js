@@ -15,9 +15,17 @@ export default function LoginForm() {
     setFormObject({ ...formObject, [name]: value });
   }
 
+  function handleLoginError(err) {
+    console.log(err);
+    alert("Invalid username/password");
+    setFormObject({
+      username: "",
+      password: ""
+    });
+  }
+
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(formObject.username)
     if (formObject.username && formObject.password) {
       if (!formObject.username) {
         alert("Please enter a valid username");
@@ -32,7 +40,6 @@ export default function LoginForm() {
           password: ""
         })
       } else {
-        console.log(formObject.username)
         API.login({
           username: formObject.username,
           password: formObject.password
@@ -42,7 +49,7 @@ export default function LoginForm() {
             Auth.authenticateUser(res.data.username);
             window.location.replace("/");
           })
-          .catch(err => console.log(err));
+          .catch(handleLoginError);
       }
     } else {
       console.log("incorrect details")
@@ -53,7 +60,7 @@ export default function LoginForm() {
     <div>
       <div className="section"></div>
       <center>
-        <a href="/"><h4>PlayPal</h4></a>
+        <a href="/"><h4>Welcome Back!</h4></a>
 
         <h5>Please login into your account</h5>
 
@@ -115,7 +122,7 @@ export default function LoginForm() {
             </form>
           </Row>
         </Container>
-        <a href="/signup">Create Account</a>
+        <a href="/signup">Not yet a member? Sign up here!</a>
       </center>
 
       <div className="section"></div>

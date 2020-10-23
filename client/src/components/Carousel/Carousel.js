@@ -14,43 +14,43 @@ export default function Carousel() {
       }}
     >
       <Slide image={<img alt="" src="./assets/images/smiley-hands.jpg" />}>
-        <Caption placement="center">
+        <Caption className="text-shadow" placement="center">
           <h3>
-            This is our big Tagline!
-      </h3>
-          <h5 className="light grey-text text-lighten-3">
-            Here's our small slogan.
-      </h5>
+            <b>PlayPal!</b>
+          </h3>
+          <h5 className="light grey-text text-lighten-5">
+            <b>Paving a brighter future for your children</b>
+          </h5>
         </Caption>
       </Slide>
       <Slide image={<img alt="" src="./assets/images/activity.jpg" />}>
-        <Caption placement="left">
+        <Caption className="text-shadow" placement="left">
           <h3>
-            Left Aligned Caption
-      </h3>
-          <h5 className="light grey-text text-lighten-3">
-            Here's our small slogan.
-      </h5>
+            <b>Discover!</b>
+          </h3>
+          <h5 className="light grey-text text-lighten-5">
+            <b>Endless creative, educational and fun activities</b>
+          </h5>
         </Caption>
       </Slide>
       <Slide image={<img alt="" src="./assets/images/friends.jpg" />}>
-        <Caption placement="right">
+        <Caption className="text-shadow" placement="right">
           <h3>
-            Right Aligned Caption
-      </h3>
-          <h5 className="light grey-text text-lighten-3">
-            Here's our small slogan.
-      </h5>
+            <b>Share your ideas!</b>
+          </h3>
+          <h5 className="light grey-text text-lighten-5">
+            <b>Put a smile on their faces</b>
+          </h5>
         </Caption>
       </Slide>
       <Slide image={<img alt="" src="./assets/images/toddlers-making-friends.jpg" />}>
-        <Caption placement="center">
+        <Caption className="text-shadow" placement="center">
           <h3>
-            This is our big Tagline!
-      </h3>
-          <h5 className="light grey-text text-lighten-3">
-            Here's our small slogan.
-      </h5>
+            <b>Join the community!</b>
+          </h3>
+          <h5 className="light grey-text text-lighten-5">
+            <a className="light grey-text text-lighten-5" href="/signup"><b>Click here to get started</b></a>
+          </h5>
         </Caption>
       </Slide>
     </Slider>

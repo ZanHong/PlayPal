@@ -58,7 +58,7 @@ export default function SignUpForm() {
     <div>
       <div className="section"></div>
       <center>
-        <a href="/"><h4>PlayPal</h4></a>
+        <a href="/"><h4>Welcome to PlayPal!</h4></a>
 
         <h5>Please fill in your details below</h5>
 
@@ -135,7 +135,7 @@ export default function SignUpForm() {
             </form>
           </Row>
         </Container>
-        <a href="/login">Log In</a>
+        <a href="/login">Have an acccount? Log in here!</a>
       </center>
 
       <div className="section"></div>

@@ -24,13 +24,13 @@ export default function Detail(props) {
       <BorderedWrapper>
         <Row>
           <Col>
-            <h1>{state.currentActivity.title}</h1>
+            <h1 style={{ color: "#0079C1" }}>{state.currentActivity.title}</h1>
             <p>by {state.currentActivity.author}</p>
           </Col>
         </Row>
         <Row>
           <Col>
-            <h4 style={{ color: "black", borderBottom: "1px solid lightgray" }}>Description</h4>
+            <h4 style={{ borderBottom: "1px solid lightgray" }}>Description</h4>
             <p>
               {state.currentActivity.description}
             </p>
@@ -38,7 +38,7 @@ export default function Detail(props) {
         </Row>
         <Row>
           <Col>
-            <h4 style={{ color: "black", borderBottom: "1px solid lightgray" }}>What to prepare?</h4>
+            <h4 style={{ borderBottom: "1px solid lightgray" }}>What to prepare?</h4>
             <p>
               {state.currentActivity.preparation}
             </p>

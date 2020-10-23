@@ -95,8 +95,8 @@ export default function SearchPage() {
                 {activities.map(activity => (
                   <ListItem key={activity._id}>
                     <Link to={"/activities/" + activity._id}>
-                      <h5><b>{activity.title}</b> <small> by </small> {activity.author}</h5>
-                      <p>Category: {activity.category}</p>
+                      <h5 style={{ color: "black" }}><b style={{ color: "#0079C1" }}>{activity.title}</b> <small style={{ color: "black" }}> by {activity.author}</small></h5>
+                      <p style={{ color: "black" }}>Category: {activity.category}</p>
                     </Link>
                   </ListItem>
                 ))}
