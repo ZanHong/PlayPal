@@ -75,6 +75,7 @@ export default function SignUpForm() {
 
               <Row>
                 <Col className="input-field s12">
+                  <i className="material-icons prefix">tag_faces</i>
                   <input
                     className="validate"
                     type="text"
@@ -89,6 +90,7 @@ export default function SignUpForm() {
 
               <Row>
                 <Col className="input-field s12">
+                  <i className="material-icons prefix">email</i>
                   <input
                     className="validate"
                     type="text"
@@ -103,6 +105,7 @@ export default function SignUpForm() {
 
               <Row>
                 <Col className="input-field s12">
+                  <i className="material-icons prefix">lock</i>
                   <input
                     className="validate"
                     type="text"

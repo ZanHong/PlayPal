@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button } from "react-materialize";
+import { Container, Row, Col, Button, Icon } from "react-materialize";
 import API from "../../utils/API";
 import Auth from "../../utils/Auth";
 import "./style.css";
@@ -70,6 +70,7 @@ export default function LoginForm() {
 
               <Row>
                 <Col className="input-field s12">
+                  <i className="material-icons prefix">tag_faces</i>
                   <input
                     className="validate"
                     type="text"
@@ -84,6 +85,7 @@ export default function LoginForm() {
 
               <Row>
                 <Col className="input-field s12">
+                  <i className="material-icons prefix">lock</i>
                   <input
                     className="validate"
                     type="text"

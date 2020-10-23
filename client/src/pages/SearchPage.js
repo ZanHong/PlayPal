@@ -10,20 +10,8 @@ export default function SearchPage() {
   const [activities, setActivities] = useState([]);
   const [search, setSearch] = useState("All");
 
-  // useEffect(() => {
-  //   loadActivities()
-  // }, []);
-
-  // function loadActivities() {
-  //   API.getActivities()
-  //     .then(res => {
-  //       setActivities(res.data);
-  //     })
-  //     .catch(err => console.log(err))
-  // };
-
   useEffect(() => {
-    console.log(search)
+    // console.log(search)
     if (search === "All") {
       API.getActivities()
         .then(res => {
@@ -33,7 +21,6 @@ export default function SearchPage() {
     } else {
       API.getActivityByCategory(search)
         .then(res => {
-          // console.log(res);
           setActivities(res.data)
         })
         .catch(err => console.log(err));
@@ -108,7 +95,7 @@ export default function SearchPage() {
                 {activities.map(activity => (
                   <ListItem key={activity._id}>
                     <Link to={"/activities/" + activity._id}>
-                      <h5>{activity.title} by {activity.author}</h5>
+                      <h5>{activity.title} <small> by </small> {activity.author}</h5>
                       <p>Category: {activity.category}</p>
                     </Link>
                   </ListItem>

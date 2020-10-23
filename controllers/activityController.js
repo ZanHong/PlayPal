@@ -27,7 +27,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findByCategory: function (req, res) {
-    console.log(req.params)
+    // console.log(req.params)
     db.Activity
       .find({
         category: req.params.category

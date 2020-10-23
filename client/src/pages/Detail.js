@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import BorderedWrapper from "../components/BorderedWrapper/BorderedWrapper";
 import { Row, Col } from "react-materialize";
 import API from "../utils/API";
