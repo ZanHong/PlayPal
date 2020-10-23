@@ -25,6 +25,33 @@ export default function CreateActivityForm() {
     console.log(formObject.description);
     console.log(formObject.preparation);
     console.log(Auth.getToken());
+    if (formObject.title && formObject.category && formObject.description) {
+      API.createActivity({
+        title: formObject.title,
+        category: formObject.category,
+        description: formObject.description,
+        preparation: formObject.preparation,
+        author: Auth.getToken()
+      })
+        .then(res => {
+          console.log(res.data);
+          if (res.status === 200) {
+            // setFormObject({
+            //   title: "",
+            //   category: "",
+            //   description: "",
+            //   preparation: "No planning is needed. Make it fun and spontaneous for your little ones!"
+            // })
+            console.log("Successful");
+          } else {
+            console.log(res.status);
+          }
+
+        })
+        .catch(err => console.log(err));
+    } else {
+      alert("Please enter valid details for the activity");
+    }
   }
   // const titleRef = useRef();
   // const authorRef = useRef();

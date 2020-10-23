@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const activityController = require("../../controllers/activityController");
+const isAuthenticated = require("../../config/middleware/isAuthenticated")
 
 // Matches with "/api/activities/"
 router.route("/")

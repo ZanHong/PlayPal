@@ -14,7 +14,7 @@ export default {
     return axios.get("/api/activities/" + id)
   },
   createActivity: function (activityData) {
-    return axios.get("/api/activities", activityData)
+    return axios.post("/api/activities", activityData)
   },
   getUserById: function (id) {
     return axios.get("/api/user/" + id)
