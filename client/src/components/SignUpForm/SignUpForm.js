@@ -108,7 +108,7 @@ export default function SignUpForm() {
                   <i className="material-icons prefix">lock</i>
                   <input
                     className="validate"
-                    type="text"
+                    type="password"
                     name="password"
                     id="password"
                     onChange={handleInputChange}
