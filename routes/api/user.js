@@ -9,8 +9,6 @@ router.route("/signup")
 // Matches with "/api/user/login"
 router.route("/login")
   .post(passport.authenticate("local"), (req, res) => {
-    // .post((req, res) => {
-    console.log(req.body)
     res.json({
       username: req.body.username,
       id: req.body.id

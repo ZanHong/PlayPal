@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button, Select } from "react-materialize";
 import Auth from "../../utils/Auth";
 import API from "../../utils/API";
@@ -17,12 +17,7 @@ export default function CreateActivityForm() {
   }
 
   function handleFormSubmit(event) {
-    event.preventDefault()
-    console.log(formObject.title);
-    console.log(formObject.category);
-    console.log(formObject.description);
-    console.log(formObject.preparation);
-    console.log(Auth.getToken());
+    event.preventDefault();
     if (formObject.title && formObject.category && formObject.description) {
       API.createActivity({
         title: formObject.title,
@@ -33,22 +28,16 @@ export default function CreateActivityForm() {
       })
         .then(res => {
           console.log(res.data);
-          if (res.status === 200) {
-            setFormObject({
-              title: "",
-              category: "",
-              description: "",
-              preparation: "No planning is needed. Make it fun and spontaneous for your little ones!"
-            })
-            console.log("Successful");
-          } else {
-            console.log(res.status);
-          }
-
+          setFormObject({
+            title: "",
+            category: "",
+            description: "",
+            preparation: "No planning is needed. Make it fun and spontaneous for your little ones!"
+          })
+          alert("Thank you for your contributions!");
+          window.location.reload();
         })
         .catch(err => console.log(err));
-    } else {
-      alert("Please enter valid details for the activity");
     }
   }
 
@@ -64,7 +53,6 @@ export default function CreateActivityForm() {
                 className="validate"
                 type="text"
                 id="title"
-                // ref={titleRef}
                 value={formObject.username}
                 onChange={handleInputChange}
               />
@@ -123,30 +111,6 @@ export default function CreateActivityForm() {
               </Select>
             </Col>
           </Row>
-          {/* <Row>
-            <Col className="input-field s6">
-              <input
-                className="validate"
-                type="text"
-                name="username"
-                id="username"
-                // ref={authorRef}
-              // value={formObject.username}
-              />
-              <label htmlFor="username">Username</label>
-            </Col>
-            <Col className="input-field s6">
-              <input
-                className="validate"
-                type="text"
-                name="category"
-                id="category"
-                // ref={categoryRef}
-              // value={formObject.username}
-              />
-              <label htmlFor="category">Physical/Social/Emotional/Cognitive/Language</label>
-            </Col>
-          </Row> */}
           <Row>
             <Col className="input-field s12">
               <textarea
@@ -155,7 +119,6 @@ export default function CreateActivityForm() {
                 type="text"
                 value={formObject.description}
                 onChange={handleInputChange}
-              // ref={descriptionRef}
               />
               <label htmlFor="Textarea-12">Description</label>
             </Col>
@@ -166,7 +129,6 @@ export default function CreateActivityForm() {
                 className="materialize-textarea validate"
                 type="text"
                 id="preparation"
-                // ref={preparationRef}
                 value={formObject.preparation}
                 onChange={handleInputChange}
               />
@@ -179,7 +141,7 @@ export default function CreateActivityForm() {
                 type="submit"
                 name="btn_submit"
                 className="col s12 btn btn-large waves-effect indigo"
-                // disabled={state.loading}
+                disabled={!(formObject.title && formObject.category && formObject.description)}
                 onClick={handleFormSubmit}
               >
                 Submit

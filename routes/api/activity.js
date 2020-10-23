@@ -12,4 +12,9 @@ router
   .route("/:id")
   .get(activityController.findById)
 
+// Matches with "/api/activities/category/:category"
+router
+  .route("/category/:category")
+  .get(activityController.findByCategory)
+
 module.exports = router;

@@ -12,7 +12,7 @@ export default function LoginForm() {
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
+    setFormObject({ ...formObject, [name]: value });
   }
 
   function handleFormSubmit(event) {

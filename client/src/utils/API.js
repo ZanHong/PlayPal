@@ -13,6 +13,9 @@ export default {
   getActivity: function (id) {
     return axios.get("/api/activities/" + id)
   },
+  getActivityByCategory: function (category) {
+    return axios.get("/api/activities/category/" + category)
+  },
   createActivity: function (activityData) {
     return axios.post("/api/activities", activityData)
   },

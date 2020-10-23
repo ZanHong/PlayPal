@@ -1,42 +1,105 @@
 import React, { useState, useEffect } from "react";
-import Dropdown from "../components/Dropdown/Dropdown";
 import BorderedWrapper from "../components/BorderedWrapper/BorderedWrapper";
 import { SearchList, ListItem, ListContainer } from "../components/List/List";
-import { Row } from "react-materialize";
+import { Row, Select, Icon } from "react-materialize";
 import Loader from "../components/Loading/Loading";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 export default function SearchPage() {
   const [activities, setActivities] = useState([]);
-  // const [formObject, setFormObject] = useState({})
-  // console.log(activities);
+  const [search, setSearch] = useState("All");
+
+  // useEffect(() => {
+  //   loadActivities()
+  // }, []);
+
+  // function loadActivities() {
+  //   API.getActivities()
+  //     .then(res => {
+  //       setActivities(res.data);
+  //     })
+  //     .catch(err => console.log(err))
+  // };
 
   useEffect(() => {
-    loadActivities()
-  }, []);
+    console.log(search)
+    if (search === "All") {
+      API.getActivities()
+        .then(res => {
+          setActivities(res.data);
+        })
+        .catch(err => console.log(err))
+    } else {
+      API.getActivityByCategory(search)
+        .then(res => {
+          // console.log(res);
+          setActivities(res.data)
+        })
+        .catch(err => console.log(err));
+    }
+  }, [search])
 
-  function loadActivities() {
-    API.getActivities()
-      .then(res => {
-        // console.log(res.data);
-        setActivities(res.data);
-      }
-
-      )
-      .catch(err => console.log(err))
+  function handleInputChange(event) {
+    setSearch(event.target.value);
   };
-
-  // function handleInputChange(event) {
-  //   const { name, value } = event.target;
-  //   setFormObject({ ...formObject, [name]: value })
-  // };
 
   return (
     <div>
       <BorderedWrapper>
         <Row>
-          <Dropdown />
+          <Select
+            icon={<Icon>search</Icon>}
+            label="Choose a categeory"
+            id="category"
+            multiple={false}
+            onChange={function noRefCheck() { }}
+            options={{
+              classes: '',
+              dropdownOptions: {
+                alignment: 'left',
+                autoTrigger: true,
+                closeOnClick: true,
+                constrainWidth: true,
+                coverTrigger: true,
+                hover: false,
+                inDuration: 150,
+                onCloseEnd: null,
+                onCloseStart: null,
+                onOpenEnd: null,
+                onOpenStart: null,
+                outDuration: 250
+              }
+            }}
+            className="validate"
+            value="All"
+            onChange={handleInputChange}
+          >
+            <option
+              disabled
+              value=""
+            >
+              Choose a category
+                </option>
+            <option value="Physical">
+              Physical
+                </option>
+            <option value="Social">
+              Social
+                </option>
+            <option value="Emotional">
+              Emotional
+                </option>
+            <option value="Cognitive">
+              Cognitive
+                </option>
+            <option value="Language">
+              Language
+                </option>
+            <option value="All">
+              All
+                </option>
+          </Select>
         </Row>
         <Row>
           {activities.length ? (

@@ -10,7 +10,12 @@ export default function Detail(props) {
 
   useEffect(() => {
     API.getActivity(props.match.params.id)
-      .then(res => dispatch({ type: SET_CURRENT_ACTIVITY, activity: res.data }))
+      .then(res => dispatch(
+        {
+          type: SET_CURRENT_ACTIVITY,
+          activity: res.data
+        }
+      ))
       .catch(err => console.log(err));
   }, []);
 
