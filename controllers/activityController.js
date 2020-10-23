@@ -14,7 +14,10 @@ module.exports = {
   create: function (req, res) {
     db.Activity
       .create(req.body)
-      .then(dbActivities => res.json(dbActivities))
+      .then(dbActivities => {
+        console.log(dbActivities)
+        res.json(dbActivities)
+      })
       .catch(err => res.status(422).json(err));
   },
   findById: function (req, res) {

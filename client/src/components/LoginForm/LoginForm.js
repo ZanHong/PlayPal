@@ -6,7 +6,7 @@ import "./style.css";
 
 export default function LoginForm() {
   const [formObject, setFormObject] = useState({
-    email: "",
+    username: "",
     password: ""
   });
 
@@ -17,29 +17,29 @@ export default function LoginForm() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    console.log(formObject.email)
-    if (formObject.email && formObject.password) {
-      if (!formObject.email.match(/.+@.+\..+/)) {
-        alert("Please enter a valid email address");
+    console.log(formObject.username)
+    if (formObject.username && formObject.password) {
+      if (!formObject.username) {
+        alert("Please enter a valid username address");
         setFormObject({
-          email: "",
+          username: "",
           password: ""
         })
       } else if (formObject.password.length < 6) {
         alert("Password must have at least 6 characters");
         setFormObject({
-          email: "",
+          username: "",
           password: ""
         })
       } else {
-        console.log(formObject.email)
+        console.log(formObject.username)
         API.login({
-          email: formObject.email,
+          username: formObject.username,
           password: formObject.password
         })
           .then(res => {
             console.log(res.data);
-            Auth.authenticateUser(res.data.email);
+            Auth.authenticateUser(res.data.username);
             window.location.replace("/account");
           })
           .catch(err => console.log(err));
@@ -73,12 +73,12 @@ export default function LoginForm() {
                   <input
                     className="validate"
                     type="text"
-                    name="email"
-                    id="email"
+                    name="username"
+                    id="username"
                     onChange={handleInputChange}
-                    value={formObject.email}
+                    value={formObject.username}
                   />
-                  <label htmlFor="email">Enter your email</label>
+                  <label htmlFor="username">Enter your username</label>
                 </Col>
               </Row>
 
@@ -103,7 +103,7 @@ export default function LoginForm() {
                     type="submit"
                     name="btn_login"
                     className="col s12 btn btn-large waves-effect indigo"
-                    disabled={!(formObject.email && formObject.password)}
+                    disabled={!(formObject.username && formObject.password)}
                     onClick={handleFormSubmit}
                   >
                     Login

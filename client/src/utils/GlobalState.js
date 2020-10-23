@@ -8,7 +8,7 @@ import {
   REMOVE_FAVOURITE
 } from "./actions";
 
-const StoreContext = createContext([]);
+const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
