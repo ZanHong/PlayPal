@@ -35,6 +35,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/playpal",
     useUnifiedTopology: true,
     useCreateIndex: true,
     useFindAndModify: false
+
   }
 );
 
