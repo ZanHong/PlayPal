@@ -33,8 +33,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/playpal",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+    useFindAndModify: false,
+    useCreateIndex: true
   }
 );
 
@@ -42,3 +42,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/playpal",
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+// Testing heroku 
