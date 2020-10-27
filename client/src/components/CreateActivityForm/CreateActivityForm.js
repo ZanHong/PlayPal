@@ -107,9 +107,6 @@ export default function CreateActivityForm() {
                 <option value="Language">
                   Language
                 </option>
-                <option value="All">
-                  All
-                </option>
               </Select>
             </Col>
           </Row>
