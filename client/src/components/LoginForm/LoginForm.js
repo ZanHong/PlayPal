@@ -10,6 +10,11 @@ export default function LoginForm() {
     password: ""
   });
 
+  const [error, setError] = useState({
+    color: "none",
+    message: ""
+  });
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
@@ -17,12 +22,12 @@ export default function LoginForm() {
 
   function handleLoginError(err) {
     console.log(err);
-    alert("Invalid username/password");
+    setError({ color: "red", message: "Invalid username/password." });
     setFormObject({
       username: "",
       password: ""
     });
-  }
+  };
 
   function handleFormSubmit(event) {
     event.preventDefault();
@@ -49,7 +54,10 @@ export default function LoginForm() {
             Auth.authenticateUser(res.data.username);
             window.location.replace("/");
           })
-          .catch(handleLoginError);
+          .catch(err => {
+            console.log(err);
+            handleLoginError();
+          });
       }
     } else {
       console.log("incorrect details")
@@ -104,7 +112,7 @@ export default function LoginForm() {
                   <label htmlFor="password">Enter your password</label>
                 </Col>
               </Row>
-
+              {error.message && (<p style={{ color: error.color }}>{error.message}</p>)}
               <br />
               <center>
                 <Row>

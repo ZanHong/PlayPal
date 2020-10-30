@@ -11,6 +11,11 @@ export default function SignUpForm() {
     password: ""
   });
 
+  const [error, setError] = useState({
+    color: "none",
+    message: ""
+  });
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value })
@@ -20,14 +25,14 @@ export default function SignUpForm() {
     event.preventDefault();
     if (formObject.username && formObject.email && formObject.password) {
       if (!formObject.email.match(/.+@.+\..+/)) {
-        alert("Please enter a valid email address");
+        setError({ color: "red", message: "Please enter a valid email address." });
         setFormObject({
           username: "",
           email: "",
           password: ""
         })
       } else if (formObject.password.length < 6) {
-        alert("Password must have at least 6 characters");
+        setError({ color: "red", message: "Password must have at least 6 characters." });
         setFormObject({
           username: "",
           email: "",
@@ -49,7 +54,10 @@ export default function SignUpForm() {
             Auth.authenticateUser(res.data.username);
             window.location.replace("/");
           })
-          .catch(err => console.log(err));
+          .catch(err => {
+            setError({ color: "red", message: "Username already exist." });
+            console.log(err)
+          });
       }
     }
   }
@@ -117,7 +125,7 @@ export default function SignUpForm() {
                   <label htmlFor="password">Enter your password</label>
                 </Col>
               </Row>
-
+              {error.message && (<p style={{ color: error.color }}>{error.message}</p>)}
               <br />
               <center>
                 <Row>
