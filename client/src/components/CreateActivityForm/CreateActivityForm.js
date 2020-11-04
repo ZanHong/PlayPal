@@ -11,6 +11,11 @@ export default function CreateActivityForm() {
     preparation: "No planning is needed. Make it fun and spontaneous for your little ones!"
   });
 
+  const [success, setSuccess] = useState({
+    color: "none",
+    message: ""
+  });
+
   function handleInputChange(event) {
     const { id, value } = event.target;
     setFormObject({ ...formObject, [id]: value })
@@ -34,8 +39,7 @@ export default function CreateActivityForm() {
             description: "",
             preparation: "No planning is needed. Make it fun and spontaneous for your little ones!"
           })
-          alert("Thank you for your contributions!");
-          window.location.reload();
+          setSuccess({ color: "green", message: "Thank you for your contribution! 😊" });
         })
         .catch(err => console.log(err));
     }
@@ -54,7 +58,7 @@ export default function CreateActivityForm() {
                 className="validate"
                 type="text"
                 id="title"
-                value={formObject.username}
+                value={formObject.title}
                 onChange={handleInputChange}
               />
               <label htmlFor="title">Title</label>
@@ -83,7 +87,7 @@ export default function CreateActivityForm() {
                   }
                 }}
                 className="validate"
-                value=""
+                value={formObject.category}
                 onChange={handleInputChange}
               >
                 <option
@@ -137,6 +141,7 @@ export default function CreateActivityForm() {
             </Col>
           </Row>
           <center>
+            {success.message && (<h5 style={{ color: success.color }}>{success.message}</h5>)}
             <Row>
               <Button
                 type="submit"
