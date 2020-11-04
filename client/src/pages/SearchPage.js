@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import BorderedWrapper from "../components/BorderedWrapper/BorderedWrapper";
 import { SearchList, ListItem, ListContainer } from "../components/List/List";
 import { Row, Select, Icon } from "react-materialize";
-import Loader from "../components/Loading/Loading";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
 
@@ -103,7 +102,11 @@ export default function SearchPage() {
               </ListContainer>
             </SearchList>
           ) : (
-              <Loader />
+              <SearchList>
+                <ListContainer>
+                  <h4>Coming soon! <span role="img" aria-label="frown">🙁</span></h4>
+                </ListContainer>
+              </SearchList>
             )}
         </Row>
       </BorderedWrapper>

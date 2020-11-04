@@ -107,7 +107,6 @@ export default function CreateActivityForm() {
                 <option value="Language">
                   Language
                 </option>
-                {/* testing heroku */}
               </Select>
             </Col>
           </Row>
