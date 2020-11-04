@@ -104,7 +104,9 @@ export default function SearchPage() {
           ) : (
               <SearchList>
                 <ListContainer>
-                  <h4>Coming soon! <span role="img" aria-label="frown">🙁</span></h4>
+                  <ListItem>
+                    <h4>Coming soon! <span role="img" aria-label="frown">🙁</span></h4>
+                  </ListItem>
                 </ListContainer>
               </SearchList>
             )}
