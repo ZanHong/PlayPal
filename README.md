@@ -1,7 +1,7 @@
 # PlayPal!
 ## Description
 
-PlayPal! is a MERN stack app that to helps parents to plan their day with their toddlers and preschoolers with a wide range of activities. These activities are not just for fun but most importantly, aim to benefit physical, social, emotional, cognitive and language skills development for our little ones. All members are able to contribute their ideas.
+PlayPal! is a MERN stack app that helps parents to plan their day with their toddlers and preschoolers with a wide range of activities. These activities are not just for fun but most importantly, aim to benefit physical, social, emotional, cognitive and language skills development for our little ones. All members are able to contribute their ideas.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
