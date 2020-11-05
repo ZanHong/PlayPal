@@ -1,29 +1,44 @@
-# Create React Express App
+# PlayPal!
+## Description
 
-## About This Boilerplate
+PlayPal! is a MERN stack app that to helps parents to plan their day with their toddlers and preschoolers with a wide range of activities. These activities are not just for fun but most importantly, aim to benefit physical, social, emotional, cognitive and language skills development for our little ones. All members are able to contribute their ideas.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-## Starting the app locally
-
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Installation
 
 ```
 npm install
 ```
 
-This should install node modules within the server and the client folder.
+## Usage
 
-After both installations complete, run the following command in your terminal:
+Click [here](https://playpal2020.herokuapp.com/) to launch the application
 
-```
-npm start
-```
+### How To Use
+1. Sign up for an account or log in if already has an account
+2. Click on "Search" on the navabr for the Search page or "Create" to create an activity
+3. On the Search page, simply choose a category and results will be automatically filtered
+4. On the Create page, fill out the forms to create an activity!
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+### Screenshots
+![homepage screenshot](./client/public/assets/images/homepage-screenshot.PNG)
 
-## Deployment (Heroku)
+## License
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+License for this project: MIT
+
+## Contributing
+
+1. Fork/Clone this repo
+2. Hack away!
+3. Create a new pull request
+4. Good commits will be accepted
+
+
+## Questions
+
+If you have any questions/doubts, feel free to contact me via:
+* GitHub: [https://github.com/ZanHong](https://github.com/ZanHong)
+* Email: [mokzanhong92@hotmail.com](mailto:mokzanhong92@hotmail.com)
