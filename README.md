@@ -17,8 +17,8 @@ npm install
 Click [here](https://playpal2020.herokuapp.com/) to launch the application
 
 ### How To Use
-1. Sign up for an account or log in if already has an account
-2. Click on "Search" on the navabr for the Search page or "Create" to create an activity
+1. Click on "Login/Signup" on the navbar to sign up for an account or log in if already has an account
+2. Click on "Search" for the Search page or "Create" to create an activity
 3. On the Search page, simply choose a category and results will be automatically filtered
 4. On the Create page, fill out the forms to create an activity!
 
